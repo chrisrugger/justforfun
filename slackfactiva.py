@@ -25,15 +25,19 @@ import urllib2
 import sys, getopt
 ##########################
 whosealerts = "Here you go:"
-factivatoken = sys.argv[1]
-slacktokenvalue = sys.argv[2]
-snippetvalue=sys.argv[3]
-urlvalue = sys.argv[4]
-def sendSlackMyNewHeadlines(accesstokenvar,snippetvar,urlvar,slacktokenvar):
+factivatoken = os.environ['FACTIVATOKEN']
+slacktokenvalue = os.environ['SLACKTOKEN']
+snippetvalue = os.environ['SNIPPETS']
+urlvalue = os.environ['URLS']
+#factivatoken = sys.argv[1]
+#slacktokenvalue = sys.argv[2]
+#snippetvalue=sys.argv[3]
+#urlvalue = sys.argv[4]
+def sendSlackMyNewHeadlines(accesstokenvar,slacktokenvar,snippetvar,urlvar):
 	accesstoken=accesstokenvar
+	slacktoken=slacktokenvar
 	snippets=snippetvar
 	urls=urlvar
-	slacktoken=slacktokenvar
 	alertlist ='http://api.dowjones.com:80/api/3.0/alerts?filter.product_type=Factiva&parts=NewArticlesCount&access_token='+accesstoken
 	al= urllib.urlopen(alertlist)
 	alj=json.load(al)
@@ -99,7 +103,7 @@ def sendSlackMyNewHeadlines(accesstokenvar,snippetvar,urlvar,slacktokenvar):
 	h = whosealerts + '\n' + h
 	sc.api_call("chat.postMessage", channel="C0UUP7PT5", text= h, username='Gowanus_Bot', icon_url='https://modernmythologies.files.wordpress.com/2014/08/swampthing.png')
 
-sendSlackMyNewHeadlines(factivatoken,snippetvalue,urlvalue,slacktokenvalue)
+sendSlackMyNewHeadlines(factivatoken,slacktokenvalue,snippetvalue,urlvalue)
 
 
 

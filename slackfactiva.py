@@ -23,6 +23,7 @@ import time
 from slackclient import SlackClient
 import urllib2
 import sys, getopt
+import os
 ##########################
 whosealerts = "Here you go:"
 factivatoken = os.environ['FACTIVATOKEN']

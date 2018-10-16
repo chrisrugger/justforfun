@@ -1,1 +1,1 @@
-web: python slackfactiva.py 
+clock: python clock.py

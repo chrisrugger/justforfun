@@ -105,10 +105,14 @@ import sys, getopt
 # change the arguments below to use os instead, like it says above
 #
 whosealerts = "Here you go:"
-factivatoken = sys.argv[1]
-slacktokenvalue = sys.argv[2]
-snippetvalue=sys.argv[3]
-urlvalue = sys.argv[4]
+#factivatoken = sys.argv[1]
+#slacktokenvalue = sys.argv[2]
+#snippetvalue=sys.argv[3]
+#urlvalue = sys.argv[4]
+factivatoken = os.environ['FACTIVATOKEN']
+slacktokenvalue = os.environ['SLACKTOKEN']
+snippetvalue = os.environ['SNIPPETS']
+urlvalue = os.environ['URLS']
 def sendSlackMyNewHeadlines(accesstokenvar,slacktokenvar,snippetvar,urlvar):
 	accesstoken=accesstokenvar
 	slacktoken=slacktokenvar

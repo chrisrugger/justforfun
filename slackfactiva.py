@@ -101,6 +101,7 @@ from slackclient import SlackClient
 #import urllib2
 import sys, getopt
 import os
+from urllib.request import urlopen
 ##########################
 # IF YOU RUN ON HEROKU THEN YOU WILL NEED TO:
 # change the arguments below to use os instead, like it says above
@@ -120,7 +121,7 @@ def sendSlackMyNewHeadlines(accesstokenvar,slacktokenvar,snippetvar,urlvar):
 	snippets=snippetvar
 	urls=urlvar
 	alertlist ='http://api.dowjones.com:80/api/3.0/alerts?filter.product_type=Factiva&parts=NewArticlesCount&access_token='+accesstoken
-	al= urllib.urlopen(alertlist)
+	al= urlopen(alertlist)
 	alj=json.load(al)
 	al.close()
 	aname=""

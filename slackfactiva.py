@@ -132,8 +132,8 @@ def sendSlackMyNewHeadlines(accesstokenvar,slacktokenvar,snippetvar,urlvar):
 			aname = '\n*' + alj['data'][q]['attributes']['name'] + '*\n'
 			# get articles for the alert
 			articlelist='http://api.dowjones.com:80/api/3.0/alerts/' + alj['data'][q]['id'] + '/articles?filter.view_type=New&deduplication_level=Similar&access_token='+accesstoken
-			f = urllib.urlopen(articlelist)   
- 			values=json.load(f)
+			f = urllib.urlopen(articlelist)
+			values = json.load(f)
 			f.close()
 			# get only the number of articles for the alert that there are new-hits-count, and then only show up to 10
 			numnew = alj['data'][q]['attributes']['new_hits_count']

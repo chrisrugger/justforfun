@@ -103,7 +103,8 @@ def sendSlackMyNewHeadlines(accesstokenvar,slacktokenvar,snippetvar,urlvar):
 		h = h + '\n:wave:'
 	h = whosealerts + '\n' + h
 	sc.api_call("chat.postMessage", channel="C0UUP7PT5", text= h, username='Gowanus_Bot', icon_url='https://modernmythologies.files.wordpress.com/2014/08/swampthing.png')
-	return "Hello world!"
+	start_response('200 OK', [('Content-Type', 'text/html')])
+	return ["Hello!"]
 sendSlackMyNewHeadlines(factivatoken,slacktokenvalue,snippetvalue,urlvalue)
 
 

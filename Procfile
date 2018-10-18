@@ -1,2 +1,2 @@
 clock: python clock.py
-web: gunicorn slacktiva:app
+web: gunicorn slacktiva:wsgi

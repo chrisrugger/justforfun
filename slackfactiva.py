@@ -98,7 +98,7 @@ import json
 import urllib
 import time
 from slackclient import SlackClient
-import urllib2
+#import urllib2
 import sys, getopt
 ##########################
 # IF YOU RUN ON HEROKU THEN YOU WILL NEED TO:

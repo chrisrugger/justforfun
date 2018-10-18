@@ -100,6 +100,7 @@ import time
 from slackclient import SlackClient
 #import urllib2
 import sys, getopt
+import os
 ##########################
 # IF YOU RUN ON HEROKU THEN YOU WILL NEED TO:
 # change the arguments below to use os instead, like it says above

@@ -1,2 +1,2 @@
 clock: python clock.py
-web: gunicorn wsgi.py
+web: gunicorn slackfactiva.py
